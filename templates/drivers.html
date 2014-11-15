@@ -1,0 +1,23 @@
+<div class="row" ng-show="userData.isAuth">
+    <div class="col-md-12">
+        Username:
+        <input type="text" data-ng-model="filterData.userName">
+        <a class="btn btn-primary" ng-click="searchDriver()">Search</a>
+
+        <div class="pull-right">
+            <a class="btn btn-primary" ng-click="changePage(-1)"><<</a>
+            <input type="text" class="input-sm" style="..." ng-model="filterData.page">
+            <a class="btn btn-primary" ng-click="changePage(+1)">>></a>
+        </div>
+    </div>
+</div>
+<br/>
+
+<div class="row">
+    <div class="col-md-12 panel panel-default">
+        <div class="panel-heading">Top Drivers</div>
+        <div class="panel-body">
+            <div drivers-list></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<table class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th>Driver</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Departure Time</th>
+        <th ng-show="userData.isAuth && isPrivate">IsMine</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="trip in latestTrips | orderBy: sort | filter: mine ">
+        <td><a href="#/drivers/{{trip.driverId}}">{{trip.driverName}}</a></td>
+        <td>{{trip.from}}</td>
+        <td>{{trip.to}}</td>
+        <td><a href="#/trips/{{trip.id}}">{{trip.departureDate | date: 'medium'}}</a></td>
+        <td ng-show="userData.isAuth && isPrivate">
+            <img src="{{trip.isMine | isMineImage}}">
+        </td>
+    </tr>
+    </tbody>
+</table>
